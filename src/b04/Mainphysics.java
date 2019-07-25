@@ -3,8 +3,8 @@ package b04;
 public class Mainphysics {
 	public static void main(String[] args) {
 
-		double s = 30.0;
-		double t = 5.0;
+		double s = 30.23;
+		double t = 5.56;
 		double x0 = 56.0;
 		double x1 = 45.0;
 		double x2 = 89.0;

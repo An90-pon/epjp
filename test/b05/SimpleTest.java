@@ -1,7 +1,7 @@
 package b05;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,18 +11,24 @@ class SimpleTest {
 	void isEvenTrue() {
 		Simple simple = new Simple();
 		boolean result = simple.isEven(42);
-		
-	    assertTrue(result);
+
+		assertTrue(result);
 	}
 
+	@Test
+	void isEvenNot() {
+		Simple simple = new Simple();
+		boolean result = simple.isEven(43);
 
+		assertFalse(result);
+	}
 
-@Test
-void isEvenNot() {
-	Simple simple = new Simple();
-	boolean result = simple.isEven(43);
-	
-    assertFalse(result);
-}
+	@Test
+	void isEvenZero() {
+		Simple simple = new Simple();
+		boolean result = simple.isEven(0);
+
+		assertTrue(result);
+	}
 
 }

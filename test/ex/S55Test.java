@@ -21,6 +21,7 @@ class S55Test {
 
         assertThat(actual, is(0L));
     }
+   
 
     @Test
     void sumSingle() {
