@@ -9,7 +9,10 @@ public class S56 {
      */
     public static String reverse(String s) {
         // TODO
-        return "";
+    	StringBuilder b = new StringBuilder();
+    	b.append(s);
+    	b = b.reverse();
+        return "b.reverse()";
     }
 
     /**

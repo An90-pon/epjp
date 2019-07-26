@@ -12,15 +12,17 @@ public class S55 {
 		// TODO
 		long sum = 0L;
 		int i = 0;
-		if (first < last) {
-		for (i = 0; i < last; i++) {
-			sum = sum + (first + i);
-			} 
-		return sum;
-		} else { 
-		 return 0;
+		if (first < last && first > 0) {
+			for (i = 0; i < last; i++) {
+				sum = sum + (first + i);
+			}
+			return sum;
+		} else if (first == last) {
+			return first;
+		} else {
+			return 0;
 		}
-	}	 
+	}
 
 	/**
 	 * Add up only the even numbers in the passed closed interval
@@ -31,7 +33,24 @@ public class S55 {
 	 */
 	public static long evenSum(int first, int last) {
 		// TODO
-		return 0;
+		long evenSum = 0L;
+		int i = 0;
+		int d = last - first;
+		if (first % 2 == 0 && first < last) {
+			for (i = 0; i < d; i = i + 2) {
+				evenSum = evenSum + (first + i);
+			}
+			return evenSum;
+		} else if (first % 2 != 0 && first < last) {
+			for (i = 0; i < d; i = i + 2) {
+				evenSum = evenSum + (first + 1 + i);
+			}
+			return evenSum;
+		} else if (first == last) {
+			return first;
+		} else {
+			return 0;
+		}
 	}
 
 	/**
@@ -42,7 +61,17 @@ public class S55 {
 	 */
 	public static long factorial(int value) {
 		// TODO
-		return 0;
+		int i = 0;
+		long factorial = 1;
+		if (value >= 1) {
+			for (i = 1; i <= value; i++) {
+				factorial = factorial * i;
+			}
+			return factorial;
+		} else {
+			return 0;
+		}
+
 	}
 
 	/**
@@ -52,8 +81,24 @@ public class S55 {
 	 * @return the Fibonacci number of value, or zero
 	 */
 	public static long fibonacci(int value) {
-		// TODO
-		return 0;
+		if (value < 1 || value > 21) {
+			return 0;
+		}
+		long fibonacci = 0L;
+		// long fibonacci1 = 1L;
+		int i = 0;
+		int n = 3;
+		int n1 = 0;
+		int n2 = 1;
+		int n3 = 0;
+		for (i = 0; i < n; i++) {
+			
+			n3 = n2 + n1;
+			n1 = n2;
+			n2 = n3;
+			fibonacci = n3;
+		}
+		return fibonacci;
 	}
 
 	/**
@@ -63,10 +108,14 @@ public class S55 {
 	 * @return The multiplication table for value, when possible
 	 */
 	public static int[][] multiplicationTable(int value) {
-		int[][] result = new int[0][0];
-
-		// TODO
-
-		return result;
-	}
+		int[][] result = new int[value][value];
+		int i = 0;
+		int j = 0;
+		for(i = 0; i < (value - 1); i++) {
+			for(j = 0; j < (value - 1); j++){
+				result[i][j] = (i + 1)*(j + 1);
+			}
+		}
+			return result;
+	}	
 }
