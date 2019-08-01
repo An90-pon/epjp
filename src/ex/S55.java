@@ -24,6 +24,19 @@ public class S55 {
 		}
 	}
 
+	public static long sumEx(int first, int last) throws Exception {
+		// TODO
+		long sumEx = 0L;
+		int i = 0;
+		for (i = 0; i < last; i++) {
+			sumEx = sumEx + (first + i);
+		}
+		if (last < first) {
+			throw new Exception("Last shouldn't be greater than first ");
+		}
+		return sumEx;
+	}
+
 	/**
 	 * Add up only the even numbers in the passed closed interval
 	 * 
@@ -74,6 +87,19 @@ public class S55 {
 
 	}
 
+	public static long factorialEx(int value) throws Exception {
+		// TODO
+		int i = 0;
+		long factorial = 1;
+		for (i = 1; i <= value; i++) {
+			factorial = factorial * i;
+		}
+		if (value < 0) {
+			throw new Exception("You cannot calculate factorial of negative number");
+		}
+		return factorial;
+	}
+
 	/**
 	 * Fibonacci number (0, 1, 1, 2, 3, 5, 8, …)
 	 * 
@@ -92,7 +118,7 @@ public class S55 {
 		int n2 = 1;
 		int n3 = 0;
 		for (i = 0; i < n; i++) {
-			
+
 			n3 = n2 + n1;
 			n1 = n2;
 			n2 = n3;
@@ -111,11 +137,11 @@ public class S55 {
 		int[][] result = new int[value][value];
 		int i = 0;
 		int j = 0;
-		for(i = 0; i < (value - 1); i++) {
-			for(j = 0; j < (value - 1); j++){
-				result[i][j] = (i + 1)*(j + 1);
+		for (i = 0; i < (value - 1); i++) {
+			for (j = 0; j < (value - 1); j++) {
+				result[i][j] = (i + 1) * (j + 1);
 			}
 		}
-			return result;
-	}	
+		return result;
+	}
 }

@@ -10,11 +10,11 @@ public class S096 {
         System.out.println(sortedSet);
         System.out.println("First: " + sortedSet.first());
         System.out.println("Last: " + sortedSet.last());
-        System.out.println(sortedSet.subSet(sortedSet.first() + 1, sortedSet.last()));
+        System.out.println(sortedSet.subSet(sortedSet.first() + 1, sortedSet.last())); //attenzione alla posizione! 
     }
 
     private static SortedSet<Integer> aSortedSet() {
-        return new TreeSet<Integer>(Arrays.asList(12, 18, -5, -2233));
+        return new TreeSet<Integer>(Arrays.asList(12, 18, -5, -2233)); //al costruttore della TreeSet ho passato comunque Arrays.asList
     }
 
 }

@@ -10,9 +10,9 @@ public class S63 {
         System.out.println(Float.class);
         System.out.println(Double.class);
 
-        @SuppressWarnings("deprecation")
+//        @SuppressWarnings("deprecation") // da java 9 in poi se uso il costruttore integer mi dà l'errore deprecation;
 		Integer i = new Integer(1);
-        Integer j = Integer.valueOf(2);
+        Integer j = Integer.valueOf(2); //usare questo al posto di new Integer;
         System.out.println(i + j);
 
         int k = j.intValue();

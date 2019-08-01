@@ -69,6 +69,27 @@ class S54Test {
 
         assertThat(actual, is('B'));
     }
+    
+    @Test
+    void voteTopEx() {
+       try {
+    	 S54.voteEx(107);  
+       }catch(Exception e) {
+    	   String expected = "You cannot pass a percentile greater than 100 or less than 0";
+    	   assertThat(e.getMessage(), is (expected));
+       }
+    }
+    
+    void voteTopEx1() {
+        try {
+     	 S54.voteEx(-3);  
+        }catch(Exception e) {
+     	   String expected = "You cannot pass a percentile greater than 100 or less than 0";
+     	   assertThat(e.getMessage(), is (expected));
+        }
+     }
+     
+    
 
     @Test
     void isLeapTrue() {

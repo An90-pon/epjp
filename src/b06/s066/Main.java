@@ -11,7 +11,7 @@ public class Main {
             System.out.println(barker.bark());
         }
         
-        BarkAndWag baw = new Dog();
+        Dog baw = new Dog();
         System.out.println(baw.tailWaggingSpeed());
 
         Dog dog = new Dog();

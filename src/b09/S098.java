@@ -9,7 +9,7 @@ public class S098 {
         Queue<Integer> q = aQueue();
         System.out.println(q);
 
-        if (q.offer(18)) {
+        if (q.offer(18)) {                                        //lui printa solo quando mi ha inserito il 18.
             System.out.println("18 has been added");
         }
 

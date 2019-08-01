@@ -19,6 +19,10 @@ public class S89 {
     }
 
     public static void main(String[] args) {
+    	System.out.println(args.length);
+    	for(String s : args) {
+    		System.out.println(s);
+    	}
         Locale.setDefault(new Locale("en", "EN"));
         Logger log = Logger.getLogger("sample");
 

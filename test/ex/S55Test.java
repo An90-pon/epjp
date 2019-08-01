@@ -36,6 +36,25 @@ class S55Test {
 
         assertThat(actual, is(0L));
     }
+    
+    void sumExSimple() {
+    	try {
+        S55.sumEx(3, 1);
+        fail("Shouldn't");
+    	} catch (Exception e) {
+    		String expected = "Last shouldn't be greater than first ";
+    		assertThat(e.getMessage(), is(expected));
+    	}
+    }
+    
+    void FactorialExSimple() {
+    	try {
+    		S55.factorialEx(-1);
+    	} catch (Exception e) {
+    		String expected = "You cannot calculate factorial of negative number";
+    		assertThat(e.getMessage(), is (expected));
+    	}
+    }
 
     @Test
     void evenSumPositive() {

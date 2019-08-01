@@ -6,7 +6,7 @@ import java.util.NavigableSet;
 import java.util.TreeSet;
 
 public class S097 {
-    public static void main(String[] args) {
+    public static void main(String[] args) {                                          // questi giochi servono a prendere sottoinsiemi
         NavigableSet<Integer> ns = aNavSet();
         System.out.println(ns);
 
@@ -20,7 +20,7 @@ public class S097 {
         System.out.println("Poll the last element: " + ns.pollLast());
     
         System.out.println("Print the set in descending order");
-        Iterator<Integer> it = ns.descendingIterator();
+        Iterator<Integer> it = ns.descendingIterator(); 							// qui non posso fare il foreach poichè ho ribaltato. Non tocco la collezione.
         while(it.hasNext()) {
             System.out.println(it.next());
         }
