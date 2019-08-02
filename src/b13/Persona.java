@@ -2,8 +2,7 @@ package b13;
 
 public abstract class Persona {
 
-	private int gunpower;
-	private int HP;
+	public int HP;
 	private String name;
 
 	public Persona(String name, int HP) {
@@ -18,10 +17,12 @@ public abstract class Persona {
 			return false;
 		}
 	}
-//
-//	public int changeEnergy(int HP, gunpower) {
-//		int newHP = 0;
-//		newHP = HP - gunpower;
-//		return temp;
-//	}
+
+	public void changeEnergy(int gunpower) {
+		this.HP += gunpower;
+	}
+
+	public String getName() {
+		return name;
+	}
 }
