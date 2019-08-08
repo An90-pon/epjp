@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class S114 {
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521/xepdb1";
-    private static final String USER = "me";
-    private static final String PASSWORD = "password";
+    private static final String URL = "jdbc:oracle:thin:@localhost:1521/xe";
+    private static final String USER = "hr";
+    private static final String PASSWORD = "hr";
 
     public static void main(String[] args) {
         try {

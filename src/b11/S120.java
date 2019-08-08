@@ -10,7 +10,7 @@ import java.util.List;
 import oracle.jdbc.pool.OracleDataSource;
 
 public class S120 {
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521/xepdb1";
+    private static final String URL = "jdbc:oracle:thin:@localhost:1521/xe";
     private static final String USER = "me";
     private static final String PASSWORD = "password";
 
@@ -24,15 +24,19 @@ public class S120 {
         ods.setPassword(PASSWORD);
     }
 
-    public List<String> getCoderNames() throws SQLException {
+    public List<Coder> getCoderNames() throws SQLException {
         try (Connection conn = ods.getConnection(); //
                 Statement stmt = conn.createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT first_name FROM coders ORDER BY 1");
+            ResultSet rs = stmt.executeQuery("SELECT first_name, last_name, salary FROM coders ORDER BY 1");
 
-            List<String> results = new ArrayList<String>();
+            List<Coder> results = new ArrayList<>();
             while (rs.next()) {
-                results.add(rs.getString(1));
-            }
+            	Coder coder = new Coder();
+            	coder.fn = rs.getString(1);
+            	coder.ln = rs.getString(2);
+            	coder.salary = rs.getInt(3);
+                results.add(coder);
+            } //se c'è un eccezione qua dentro viene ritirata
             return results;
         }
     }
@@ -40,7 +44,7 @@ public class S120 {
     public static void main(String[] args) {
         try {
             S120 sample = new S120();
-            List<String> names = sample.getCoderNames();
+            List<Coder> names = sample.getCoderNames();
 
             System.out.println("Coder names are: " + names);
         } catch (SQLException e) {
@@ -50,3 +54,14 @@ public class S120 {
 
     }
 }
+
+	class Coder {
+		public String fn;
+		public String ln;
+		public int salary;
+		@Override
+		public String toString() {
+			return "Coder [fn=" + fn + ", ln=" + ln + ", salary=" + salary + "]";
+		}
+		
+	}
